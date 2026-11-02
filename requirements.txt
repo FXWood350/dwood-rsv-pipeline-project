@@ -1,0 +1,2 @@
+# packages not available in nixpkgs
+pandas_market_calendars==5.5.0 
