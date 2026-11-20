@@ -10,22 +10,6 @@ Mean-field Variational Inference (VI) trades asymptotic exactness for speed, oft
 
 ---
 
-## Overview
-
-```mermaid
-flowchart LR
-    A["Raw ES Futures L1/Intraday Data<br/>(es_futures.parquet)"] --> B["DuckDB Preprocessing<br/>(CME day, rollovers, BG filter, RV)"]
-    B --> C["Ground Truth<br/>NUTS"]
-    B --> D["Variational Inference<br/>Mean-Field SVI"]
-    C --> E["Posterior Draws<br/>(θ, h_1:T)"]
-    D --> F["Variational Posterior<br/>(θ, h_1:T)"]
-    E --> G["Black-Scholes / Heston<br/>Pricer"]
-    F --> G
-    G --> H["Pricing<br/>& Comparison"]
-```
-
----
-
 ## Roadmap
 
 ### 0. Market Data Engineering (`DuckDB` + `pandas_market_calendars`)
